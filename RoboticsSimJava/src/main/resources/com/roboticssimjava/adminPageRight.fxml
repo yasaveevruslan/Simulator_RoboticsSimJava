@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.roboticssimjava.AdminPageRight">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
+        <left>
+            <VBox prefHeight="1080.0" prefWidth="125.6" spacing="10.0" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="1080.0" prefWidth="120.0" style="-fx-background-color: #49494E;"
+                            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <VBox alignment="CENTER" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <MenuButton fx:id="AdminButton" mnemonicParsing="false" popupSide="RIGHT"
+                                    style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@3.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <items>
+                                <MenuItem onAction="#changeAdminPageArea" text="Настройка полей"/>
+                                <MenuItem onAction="#changeAdminPageRobot" text="Настройка робота"/>
+                                <MenuItem text="Настройка прав пользователей"/>
+                            </items>
+                        </MenuButton>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#changeMenuPage"
+                                style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@1.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <Button fx:id="robotButton" mnemonicParsing="false" onAction="#changeRobotPage"
+                                style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@2.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#changePlayMode"
+                                style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@4.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                    </VBox>
+                </AnchorPane>
+            </VBox>
+        </left>
+        <center>
+
+            <VBox alignment="CENTER" prefHeight="420.0" prefWidth="358.0" BorderPane.alignment="CENTER">
+                <Label alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;"
+                       text="Изменение прав пользователей">
+                    <VBox.margin>
+                        <Insets bottom="40.0"/>
+                    </VBox.margin>
+                </Label>
+                <VBox alignment="CENTER" prefHeight="319.0" prefWidth="344.0" spacing="10.0">
+                    <TableView fx:id="tableView" editable="true">
+                        <columns>
+                            <TableColumn fx:id="firstNameColumn" prefWidth="200.0" text="Имя"/>
+                            <TableColumn fx:id="lastNameColumn" prefWidth="200.0" text="Фамилия"/>
+                            <TableColumn fx:id="rightColumn" prefWidth="200.0" text="Права пользователя"/>
+                            <TableColumn fx:id="checkBoxColumn" prefWidth="170.0" text="Права админа">
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+
+                </VBox>
+                <BorderPane.margin>
+                    <Insets left="50.0"/>
+                </BorderPane.margin>
+            </VBox>
+        </center>
+        <right>
+
+
+            <HBox alignment="TOP_RIGHT" style="-fx-padding: 20 20 0 0;" BorderPane.alignment="CENTER">
+                <Button fx:id="settingsButton" onAction="#changeSettings"
+                        style="-fx-background-color: transparent; -fx-text-fill: black;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@settings.png"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </HBox>
+        </right>
+    </BorderPane>
+</AnchorPane>

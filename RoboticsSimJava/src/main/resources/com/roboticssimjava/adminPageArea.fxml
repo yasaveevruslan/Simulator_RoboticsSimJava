@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.roboticssimjava.AdminPageArea">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
+        <left>
+            <VBox prefHeight="1080.0" prefWidth="125.6" spacing="10.0" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="1080.0" prefWidth="120.0" style="-fx-background-color: #49494E;"
+                            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <VBox alignment="CENTER" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <MenuButton fx:id="AdminButton" mnemonicParsing="false" popupSide="RIGHT"
+                                    style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@3.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <items>
+                                <MenuItem text="Настройка полей"/>
+                                <MenuItem onAction="#changeAdminPageRobot" text="Настройка робота"/>
+                                <MenuItem onAction="#changeAdminPageRight" text="Настройка прав пользователей"/>
+                            </items>
+                        </MenuButton>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#changeMenuPage"
+                                style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@1.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <Button fx:id="robotButton" mnemonicParsing="false" onAction="#changeRobotPage"
+                                style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@2.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#changePlayMode"
+                                style="-fx-background-color: #49494E;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@4.png"/>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5"/>
+                    </VBox>
+                </AnchorPane>
+            </VBox>
+        </left>
+        <center>
+
+            <VBox alignment="CENTER" prefHeight="420.0" prefWidth="358.0" BorderPane.alignment="CENTER">
+                <Label alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Добавление полей">
+                    <VBox.margin>
+                        <Insets bottom="40.0"/>
+                    </VBox.margin>
+                </Label>
+                <VBox alignment="CENTER" prefHeight="557.0" prefWidth="1660.0" spacing="10.0">
+
+                    <TableView fx:id="tableView" editable="true" prefHeight="370.0" prefWidth="1660.0">
+                        <columns>
+                            <TableColumn fx:id="nameColumn" maxWidth="200.0" prefWidth="160.0" text="Название"/>
+                            <TableColumn fx:id="imgColumn" maxWidth="200.0" prefWidth="160.0" text="Изображение"/>
+                            <TableColumn fx:id="dataColumn" maxWidth="200.0" prefWidth="160.0" text="Дата занесения"/>
+                            <TableColumn fx:id="checkBoxColumn" maxWidth="200.0" prefWidth="160.0" text="Использовать"/>
+                            <TableColumn fx:id="checkDeleteBoxColumn" maxWidth="200.0" prefWidth="160.0"
+                                         text="Удалить"/>
+                        </columns>
+                    </TableView>
+
+                    <Button fx:id="SaveArea" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                            onAction="#chooseAreaImage" prefHeight="58.0" prefWidth="206.0"
+                            style="-fx-background-color: #3A3A3A; -fx-background-radius: 5px;" text="Добавить"
+                            textFill="WHITE">
+                        <font>
+                            <Font name="Arial Bold" size="22.0"/>
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+
+                    </Button>
+                    <Button fx:id="DeleteArea" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                            onAction="#deleteAreaImage" prefHeight="58.0" prefWidth="206.0"
+                            style="-fx-background-color: #3A3A3A; -fx-background-radius: 5px;" text="Удалить"
+                            textFill="WHITE">
+                        <font>
+                            <Font name="Arial Bold" size="22.0"/>
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </Button>
+                    <VBox.margin>
+                        <Insets left="50.0"/>
+                    </VBox.margin>
+                </VBox>
+            </VBox>
+        </center>
+        <right>
+
+            <HBox alignment="TOP_RIGHT" style="-fx-padding: 20 20 0 0;" BorderPane.alignment="CENTER">
+                <Button fx:id="settingsButton" onAction="#changeSettings"
+                        style="-fx-background-color: transparent; -fx-text-fill: black;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@settings.png"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </HBox>
+        </right>
+    </BorderPane>
+</AnchorPane>

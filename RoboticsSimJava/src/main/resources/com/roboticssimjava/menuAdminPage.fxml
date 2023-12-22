@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.MenuButton?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.roboticssimjava.MenuController" alignment="CENTER">
+    <VBox spacing="10.0">
+        <AnchorPane fx:id="ActivityPanel" prefHeight="1080.0" prefWidth="120.0" style="-fx-background-color: #49494E;"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="CENTER" spacing="15.0"
+                  AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <Line endX="170" endY="100" startX="50" startY="100" stroke="WHITE" strokeWidth="5" />
+                <MenuButton fx:id="AdminButton" mnemonicParsing="false" style="-fx-background-color: #49494E;" popupSide="RIGHT">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@3.png" />
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <items>
+
+                        <MenuItem text="Настройка полей"   onAction="#changeAdminPageArea"/>
+                        <MenuItem text="Настройка робота"  onAction="#changeAdminPageRobot" />
+                        <MenuItem text="Настройка прав пользователей" onAction="#changeAdminPageRight" />
+                    </items>
+                </MenuButton >
+                <Line startX="50" startY="100" endX="170" endY="100" stroke="WHITE" strokeWidth="5"/>
+                <Button fx:id="menuButton"  mnemonicParsing="false" style="-fx-background-color: #49494E;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@1.png"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Line startX="50" startY="100" endX="170" endY="100" stroke="WHITE" strokeWidth="5"/>
+                <Button fx:id="robotButton" onAction="#changeRobotPage" mnemonicParsing="false" style="-fx-background-color: #49494E;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@2.png"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Line startX="50" startY="100" endX="170" endY="100" stroke="WHITE" strokeWidth="5"/>
+                <Button fx:id="playButton" onAction="#changePlayMode" mnemonicParsing="false" style="-fx-background-color: #49494E;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@4.png"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Line startX="50" startY="100" endX="170" endY="100" stroke="WHITE" strokeWidth="5"/>
+            </VBox>
+        </AnchorPane>
+    </VBox>
+
+
+    <VBox HBox.hgrow="ALWAYS" spacing="15.0"  alignment="CENTER">
+        <Label text="Выбор поля для задания" style="-fx-font-size: 32px; -fx-font-weight: bold;"  alignment="CENTER"/>
+        <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
+            <VBox fx:id="imageBox1" GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="10" style="-fx-padding: 55 10 50 10;" >
+                <ImageView fx:id="image1" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" fitWidth="380" fitHeight="210">
+                    <Image url="@logo.png"/>
+                </ImageView>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </VBox>
+
+            <VBox fx:id="imageBox2" GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="10" style="-fx-padding: 55 10 50 10;" >
+                <ImageView fx:id="image2" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" fitWidth="380" fitHeight="210">
+                    <Image url="@Rectangle 11.png"/>
+                </ImageView>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </VBox>
+
+            <VBox fx:id="imageBox3" GridPane.columnIndex="2" GridPane.rowIndex="2" spacing="10" style="-fx-padding: 55 0 50 10;">
+                <ImageView fx:id="image3" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" fitWidth="380" fitHeight="210">
+                    <Image url="@Rectangle 11.png"/>
+                </ImageView>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </VBox>
+        </GridPane>
+
+        <Button fx:id="choiceButton" onAction="#choiceAreaImage" mnemonicParsing="false" prefHeight="78.0" prefWidth="206.0" style="-fx-background-color: #3A3A3A; -fx-background-radius: 5px;" text="Выбор" textFill="WHITE" alignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="22.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </VBox>
+
+    <VBox style="-fx-padding: 20 20 0 0;">
+        <Button fx:id="settingsButton" onAction="#changeSettings" style="-fx-background-color: transparent; -fx-text-fill: black;">
+            <graphic>
+                <ImageView>
+                    <Image url="@settings.png"/>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+    </VBox>
+</HBox>

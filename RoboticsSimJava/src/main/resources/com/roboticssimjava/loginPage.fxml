@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.roboticssimjava.LoginPageController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="234.0" style="-fx-background-color: #EFEFEF;"
+                  BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" layoutY="359.0" prefHeight="18.0" prefWidth="226.0"
+                text="Copyright (c). All Rigths Reserved." AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+               <Font name="System Bold" size="10.0"/>
+            </font>
+         </Label>
+         <ImageView fitHeight="173.0" fitWidth="239.0" layoutX="-4.0" layoutY="93.0">
+            <Image url="@logo.png"/>
+         </ImageView>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="374.0" style="-fx-background-color: #FFFFFF;"
+                  BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" layoutX="12.0" layoutY="34.0" prefHeight="55.0" prefWidth="374.0" text="Вход"
+                AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+               <Font name="System Bold" size="18.0"/>
+            </font>
+         </Label>
+         <Label alignment="CENTER_RIGHT" layoutX="45.6" layoutY="127.0" prefHeight="18.0" prefWidth="104.0"
+                text="Имя пользователя" AnchorPane.rightAnchor="242.4"/>
+         <Label alignment="CENTER_RIGHT" layoutX="105.6" layoutY="163.0" prefHeight="18.0" prefWidth="44.0"
+                text="Пароль" AnchorPane.rightAnchor="242.4"/>
+         <Button fx:id="loginButton" ellipsisString="" layoutX="89.0" layoutY="209.0" mnemonicParsing="false"
+                 onAction="#setLoginButton" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #000003;"
+                 text="Войти" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND"/>
+            </cursor>
+         </Button>
+         <TextField fx:id="usernameTextField" layoutX="158.4" layoutY="124.0" AnchorPane.rightAnchor="76.0"/>
+         <PasswordField fx:id="passwordPasswordField" layoutX="158.4" layoutY="163.0" AnchorPane.rightAnchor="76.0"/>
+         <Button fx:id="registrationButton" ellipsisString="" layoutX="141.0" layoutY="243.0" mnemonicParsing="false"
+                 onAction="#changeRegistrPage" prefHeight="26.0" prefWidth="202.0"
+                 style="-fx-background-color: #FFFFFF;" text="Зарегистрироваться" textFill="#1d4794">
+            <font>
+               <Font name="System Bold" size="10.0"/>
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND"/>
+            </cursor>
+         </Button>
+         <Label alignment="CENTER_RIGHT" layoutX="80.2" layoutY="247.0" prefHeight="18.0" prefWidth="108.0"
+                text="Не зарегистрирован?" AnchorPane.leftAnchor="80.2">
+            <font>
+               <Font name="System Bold" size="10.0"/>
+            </font>
+         </Label>
+         <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="60.8" layoutY="93.0" prefHeight="18.0"
+                prefWidth="276.0" textFill="#df0000" AnchorPane.leftAnchor="45.6" AnchorPane.topAnchor="85.4">
+            <font>
+               <Font size="11.0"/>
+            </font>
+         </Label>
+      </AnchorPane>
+   </center>
+</BorderPane>
