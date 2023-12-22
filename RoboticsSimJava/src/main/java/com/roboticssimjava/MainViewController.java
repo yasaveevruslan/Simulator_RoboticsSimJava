@@ -3,7 +3,6 @@ package com.roboticssimjava;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -145,6 +144,12 @@ public class MainViewController {
         }
     }
 
+    private static void initTimelineForRobot(){
+        Timeline updateTimeValue = new Timeline(new KeyFrame(Duration.millis(300), e -> updateRobot()));
+        updateTimeValue.setCycleCount(Animation.INDEFINITE);
+        updateTimeValue.play();
+    }
+
     private static void initTimelineForSmartBoard(){
         Timeline updateTimeValue = new Timeline(new KeyFrame(Duration.millis(300), e -> updateValue()));
         updateTimeValue.setCycleCount(Animation.INDEFINITE);
@@ -224,6 +229,12 @@ public class MainViewController {
         for (Group view : views) {
             dynamicButtonsPane.getChildren().addAll(view);
         }
+    }
+
+    private static FunctionalRobot functional = new FunctionalRobot();
+    private static void updateRobot()
+    {
+        functional.update();
     }
 
     private static void updateValue(){
